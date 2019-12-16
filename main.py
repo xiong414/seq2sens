@@ -5,8 +5,11 @@
 
 import dfa_sens, sen2sens, logging, sys
 
+if __name__ == '__main__':
+    # argv 外部调用参数
+    # sentence = str(sys.argv[1])
 
-def main(sentence):
+    sentence = str(input('输入:'))
     dfa_model = dfa_sens.DFA()
     sens_model_adress = '/Users/xiongguoqing/mymodel/jiagu2/jiagu2_model'
     sens_model = sen2sens.Sen2Sens(w2v_address=sens_model_adress)
@@ -22,13 +25,3 @@ def main(sentence):
         sens_model.judgeSens(sentence, mode='defalut')
     except:
         logging.warning('句子中有语料库中不存在的词，无法分析语意！')
-
-
-if __name__ == '__main__':
-    # argv 外部调用参数
-    # sentence = str(sys.argv[1])
-    #
-    while 1:
-        sentence = str(input('输入:'))
-        main(sentence)
-
