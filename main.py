@@ -26,7 +26,9 @@ def main(sentence):
 
 if __name__ == '__main__':
     # argv 外部调用参数
-    sentence = str(sys.argv[1])
+    # sentence = str(sys.argv[1])
+    #
+    while 1:
+        sentence = str(input('输入:'))
+        main(sentence)
 
-    sentence = str(input('输入:'))
-    main(sentence)
